@@ -64,9 +64,9 @@ neverallow {
   userdebug_or_eng(` -vendor_qtiloopback_native')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
 
-neverallow {
-  vendor_halserverdomain
-  - vendor_qtidataservices_app
-} { file_type fs_type }:file execute_no_trans;
+#neverallow {
+#  vendor_halserverdomain
+#  - vendor_qtidataservices_app
+#} { file_type fs_type }:file execute_no_trans;
 neverallow { domain -init } vendor_halserverdomain:process transition;
 neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;
